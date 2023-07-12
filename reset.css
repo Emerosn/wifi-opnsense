@@ -1,0 +1,118 @@
+/* Reset CSS */
+
+/* Box sizing border-box */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Margin and padding */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ol,
+ul,
+li,
+dl,
+dd,
+figure,
+figcaption,
+blockquote,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+table,
+th,
+td,
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="tel"],
+input[type="number"],
+input[type="date"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="month"],
+input[type="week"],
+input[type="time"],
+input[type="range"],
+input[type="search"],
+input[type="color"],
+textarea,
+select {
+  margin: 0;
+  padding: 0;
+}
+
+/* Typography */
+body,
+button,
+input,
+select,
+textarea {
+  font-family: Arial, sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/* Lists */
+ol,
+ul {
+  list-style: none;
+}
+
+/* Links */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* Form elements */
+button,
+input,
+optgroup,
+select,
+textarea {
+  appearance: none;
+  border: none;
+  background: none;
+  resize: none;
+  outline: none;
+}
+
+/* Images */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* Clearfix */
+.clearfix::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
