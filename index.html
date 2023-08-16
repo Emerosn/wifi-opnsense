@@ -1,39 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Formulário de Cadastro</title>
-  
-  <link rel="stylesheet" href="style.css">
+    <title>Signup Form</title>
+    <!-- Include jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
-  <div class="container">
-    <img src="logo.png">
-    <h1>Wifi NT Online</h1>
-<form action="login.html" method="post">
-    <div class="center">
-      <div >
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" placeholder="Digite seu nome" required>
-      </div>
-      
-      <div>
-        <label for="nome">Bairro:</label>
-        <input type="text" id="outros-bairros" placeholder="Digite outros bairros">
-      </div>
-      
-      <div>
-        <label>Telefone:</label>
-        <input type="tel" id="telefone1" placeholder="Telefone 1">
-      </div>
-      
-      </div>
-        <div class="center">
-        <button type="submit">Enviar</button>
-      </dev>
-    </form>
-  </div>
+    <div class="container">
+        <h1>Signup Form</h1>
+        <form id="signupForm" class="center" method="post" action="login.php">
+            <div class="form-field">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required><br>
+            </div>
+            <div class="form-field">
+                <label for="street">Bairro:</label>
+                <input type="text" id="street" name="street" required><br>
+            </div>
+            <div class="form-field">
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" required><br>
+            </div>
+            <div class="center">
+                <button type="submit">Confirmar</button>
+            </div>
+        </form>
+    </div>
+
+    <div id="responseMsg"></div>
+
+    <script>
+        $(document).ready(function() {
+            $("#signupForm").submit(function(event) {
+                event.preventDefault();
+                var form = $(this);
+                var url = form.attr('action');
+                var formData = form.serialize();
+
+                $.ajax({
+                    type: "POST",
+                    url: "http://192.168.124.146:9000/connect.php",
+                    data: formData,
+                    success: function(response) {
+                        $("#responseMsg").text("Cadastro Concluído");
+                        window.location.href = 'login.php';
+                    },
+                    error: function() {
+                        alert("Erro ao processar o cadastro.");
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
 
